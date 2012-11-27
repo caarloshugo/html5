@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.21" />
+	<script src="js/kinetic-v3.8.3.js"></script>
+	<script src="js/jquery.js"></script>
+	<script>
+		window.onload = function() {
+			var stage = new Kinetic.Stage("container-r", 500, 500);
+			var layer = new Kinetic.Layer();
+			var arcs  = draw();
+			
+			function draw() {
+				var x = 350;
+				var y = 300;
+				
+				var indice = new Kinetic.Shape({
+					drawFunc: function(stroke){
+						var context = this.getContext();
+						context.save();
+						context.beginPath();
+						
+						var startAngle = (0*Math.PI)/180;
+						var endAngle   = (360*Math.PI)/180;
+												
+						context.arc(x, y, 70, startAngle, endAngle, false); 
+						context.lineWidth   = 4;
+						context.fillStyle   = '#2fb9ba';
+						context.strokeStyle = "#e3e6e4";
+						context.stroke();
+						context.fill();
+						context.closePath();
+						context.restore();
+					}
+				});
+				
+				
+				/* Variables Principales */
+				var var_p_1 = new Kinetic.Shape({
+					drawFunc: function(stroke){
+						var context = this.getContext();
+						context.save();
+						context.beginPath();
+						
+						var startAngle = (240*Math.PI)/180;
+						var endAngle   = (0*Math.PI)/180;
+						
+						context.arc(x, y, 150, startAngle, endAngle, false); 
+						context.lineTo(x,y);
+						context.fillStyle = '#2eb8b9';
+						context.fill();
+						context.closePath();
+						context.restore();
+					}
+				});
+				
+				var var_p_2 = new Kinetic.Shape({
+					drawFunc: function(stroke){
+						var context = this.getContext();
+						context.save();
+						context.beginPath();
+						
+						var startAngle = (120*Math.PI)/180;
+						var endAngle   = (240*Math.PI)/180;
+						
+						context.arc(x, y, 150, startAngle, endAngle, false); 
+						context.lineTo(x, y);
+						context.fillStyle = 'blue';
+						context.fill();
+						context.closePath();
+						context.restore();
+					}
+				});
+				
+				var var_p_3 = new Kinetic.Shape({
+					drawFunc: function(stroke){
+						var context = this.getContext();
+						context.save();
+						context.beginPath();
+						
+						var startAngle = (360*Math.PI)/180;
+						var endAngle   = (120*Math.PI)/180;
+						
+						context.arc(x, y, 150, startAngle, endAngle, false); 
+						context.lineTo(x,y);
+						context.fillStyle = 'red';
+						context.fill();
+					}
+				});
+				
+				indice.on("mousedown", function(){ draggingShape = this; var mousePos = stage.getMousePosition(); draggingRectOffsetX = mousePos.x - circle._x; draggingRectOffsetY = mousePos.y - circle._y; });
+				indice.on("mouseout", function(){ document.body.style.cursor = "default";  });
+				indice.on("mouseover", function(){ document.body.style.cursor = "pointer"; });
+				
+				layer.add(var_p_1);
+				layer.add(var_p_2);
+				layer.add(var_p_3);
+				layer.add(indice);
+				stage.add(layer);
+			}
+		};
+	</script>
+</head>
+
+<body>
+    <div id="container-r"></div>
+</body>
+
+</html>
