@@ -78,7 +78,7 @@
 				
 				/* D E F */
 				startAngle = (201*Math.PI)/180;
-				endAngle   = (236*Math.PI)/180;
+				endAngle   = (238*Math.PI)/180;
 				
 				var var_i_d = drawArc(x,y,204,startAngle, endAngle, '#666666');
 				
@@ -92,8 +92,29 @@
 				
 				var var_i_f = drawArc(x,y,204,startAngle, endAngle, '#df6c4f');
 
-
+				
+				/* G H I */
+				startAngle = (80*Math.PI)/180;
+				endAngle   = (118*Math.PI)/180;
+				
+				var var_i_g = drawArc(x,y,204,startAngle, endAngle, '#666666');
+				
+				startAngle = (41*Math.PI)/180;
+				endAngle   = (79*Math.PI)/180;
+				
+				var var_i_h = drawArc(x,y,204,startAngle, endAngle, '#de2b33');
+				
+				startAngle = (3*Math.PI)/180;
+				endAngle   = (40*Math.PI)/180;
+				
+				var var_i_i = drawArc(x,y,204,startAngle, endAngle, '#df6c4f');
+				
+				
 				/* Layers */
+				layer.add(var_i_i);
+				layer.add(var_i_h);
+				layer.add(var_i_g);
+				
 				layer.add(var_i_f);
 				layer.add(var_i_e);
 				layer.add(var_i_d);
