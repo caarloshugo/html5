@@ -59,6 +59,8 @@
 				/* Variables Internas */
 				// 120 - 6 = 114
 				// 114 / 3 = 38
+				
+				/* A B C */
 				startAngle = (322*Math.PI)/180;
 				endAngle   = (358*Math.PI)/180;
 				
@@ -73,18 +75,37 @@
 				endAngle   = (283*Math.PI)/180;
 				
 				var var_i_c = drawArc(x,y,204,startAngle, endAngle, '#ebd06e');
-
 				
-				indice.on("mousedown", function(){ draggingShape = this; var mousePos = stage.getMousePosition(); draggingRectOffsetX = mousePos.x - circle._x; draggingRectOffsetY = mousePos.y - circle._y; });
-				indice.on("mouseout", function(){ document.body.style.cursor = "default";  });
-				indice.on("mouseover", function(){ document.body.style.cursor = "pointer"; });
+				/* D E F */
+				startAngle = (201*Math.PI)/180;
+				endAngle   = (236*Math.PI)/180;
+				
+				var var_i_d = drawArc(x,y,204,startAngle, endAngle, '#666666');
+				
+				startAngle = (162*Math.PI)/180;
+				endAngle   = (200*Math.PI)/180;
+				
+				var var_i_e = drawArc(x,y,204,startAngle, endAngle, '#de2b33');
+				
+				startAngle = (123*Math.PI)/180;
+				endAngle   = (161*Math.PI)/180;
+				
+				var var_i_f = drawArc(x,y,204,startAngle, endAngle, '#df6c4f');
+
+
+				/* Layers */
+				layer.add(var_i_f);
+				layer.add(var_i_e);
+				layer.add(var_i_d);
 				
 				layer.add(var_i_c);
 				layer.add(var_i_b);
 				layer.add(var_i_a);
+				
 				layer.add(var_p_1);
 				layer.add(var_p_2);
 				layer.add(var_p_3);
+				
 				layer.add(indice);
 				stage.add(layer);
 			}
@@ -101,6 +122,10 @@
 						context.fill();
 					}
 				});
+				
+				arc.on("mousedown", function(){ draggingShape = this; var mousePos = stage.getMousePosition(); draggingRectOffsetX = mousePos.x - circle._x; draggingRectOffsetY = mousePos.y - circle._y; });
+				arc.on("mouseout", function(){ document.body.style.cursor = "default";  });
+				arc.on("mouseover", function(){ document.body.style.cursor = "pointer"; });
 				
 				return arc;
 			}
